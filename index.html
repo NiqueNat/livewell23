@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Well APP</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <link rel="stylesheet" href="./livewelldb.css">
+</head>
+<body>
+
+ 
+  <header>
+    <section>
+      <h1>Dynamic Web Programming</h1>
+      <p>Myrna Dominique</p>
+      <h2>Live well APP</h2>
+    </section>
+  </header>
+
+ 
+  
+  <main>
+
+    <button id="openFormBtn">Open Form</button>
+    <div id="formModal" style="display: none;" role="dialog" aria-modal="true" class="modal">
+      <div class="modal-content">
+        <span id="closeFormBtn" class="close">&times;</span>
+        <form id="exercise-form">
+            <label for="weight-input"><h3>Weight in Lbs:</h3></label>
+            <input type="number" id="weight-input" required>
+            
+            <label for="duration-input"><h3>Duration (in minutes):</h3></label>
+            <input type="number" id="duration-input" required>
+            
+            <label for="activity-input"><h3>Activity:</h3></label>
+            <input type="text" id="activity-input" required>
+            
+            <button type="submit">Calculate</button>
+          </form>
+      </div>
+    </div>
+    
+    <!-- Modal Popup -->
+    <div id="resultModal" style="display: none;" role="dialog" aria-modal="true" class="modal">
+        <div class="modal-content">
+            <span id="closeResultBtn" class="close">&times;</span>
+            <h2>Calorie Results</h2>
+            <ul id="results-list"></ul>
+        </div>
+    </div>
+
+      <form id="insert-form">
+        <fieldset class="text-box">
+          <p>
+            <label for="full_name">Name:</label>
+            <input type="text" name="full_name" required>
+          </p>
+          <p>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+          </p>
+          <p>
+            <label for="meal_plan"></label><h3>Meal Plan :</label>
+            <select name="meal_plan">
+              <option value="Vegan">Vegan</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Paleo">Paleo</option>
+              <option value="Low Carb">Low Carb</option>
+              <option value="High-Protein">High Protein</option>
+              <option value="Gluten Free">Gluten Free</option>
+              <option value="Low Fat">Low Fat</option>
+              <!-- Add more options here as needed -->
+            </select>
+          </p>
+          <p>
+            <button type="button" id="submit">Select Your Meal Plan</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+    <canvas id="mealPlanDistributionChart" role="img" aria-label="A bar chart showing meal plan distribution" width="400" height="400"></canvas>
+  
+
+    <!--I am probably going to change the layout. Want to embedd and food database. still figuring it out-->
+  </main>
+
+
+
+  <footer>
+    <p>&COPY; 2023</p>
+  </footer>
+
+  <script src="./livewelldb.js"></script>
+</body>
+</html>
